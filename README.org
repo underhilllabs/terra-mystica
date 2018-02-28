@@ -11,7 +11,8 @@ A play-by-email / play-by-web moderator for the boardgame Terra Mystica.
 
 
 * Deployment Instructions
-```
+
+```bash
 mkdir www
 perl deploy.pl www
 ```
