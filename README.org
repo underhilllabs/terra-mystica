@@ -16,3 +16,9 @@ A play-by-email / play-by-web moderator for the boardgame Terra Mystica.
 mkdir www
 perl deploy.pl www
 ```
+
+* Perl CPAN modules to install
+
+cpanm Bytes::Random::Secure CGI::PSGI Clone Crypt::Blowfish Crypt::CBC Crypt::Eksblowfish::Bcrypt Data::Password::Common DBD::Pg DBI Digest::SHA1 Exporter::Easy File::Slurp indirect JSON Math::Random::MT Method::Signatures::Simple Moose Readonly Statistics::Descriptive Task::Plack Term::ReadLine Text::Diff Text::Template
+
+
