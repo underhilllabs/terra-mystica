@@ -11,7 +11,7 @@ use DB::EditLink;
 use Game::Constants;
 use Net::SMTP;
 
-my $domain = "https://terra.snellman.net";
+my $domain = "http://terra.denvertech.org";
 
 sub notify_by_email {
     my ($game, $email, $subject, $body) = @_;
@@ -20,13 +20,13 @@ sub notify_by_email {
 
     my $smtp = Net::SMTP->new('localhost', ( Debug => 0 ));
 
-    $smtp->mail("www-data\@terra.snellman.net");
+    $smtp->mail("snellman\@terra.denvertech.org");
     if (!$smtp->to($email)) {
         print STDERR "Invalid email address $email\n";
     } else {
         $smtp->data();
         $smtp->datasend("To: $email\n");
-        $smtp->datasend("From: TM Game Notification <noreply+notify-game-$game->{name}\@terra.snellman.net>\n");
+        $smtp->datasend("From: TM Game Notification <noreply+notify-game-$game->{name}\@terra.denvertech.org>\n");
         $smtp->datasend("Subject: $subject\n");
         $smtp->datasend("\n");
         $smtp->datasend("$body\n");

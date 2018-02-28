@@ -82,17 +82,17 @@ method request_registration($q, $dbh) {
         };
         my $token = insert_to_validate $dbh, $data;
 
-        my $url = sprintf "https://terra.snellman.net/app/register/validate/%s", $token;
+        my $url = sprintf "http://terra.denvetech.org/app/register/validate/%s", $token;
 
         my $smtp = Net::SMTP->new('localhost', ( Debug => 0 ));
 
-        $smtp->mail("www-data\@terra.snellman.net");
+        $smtp->mail("snellman\@terra.denvertech.org");
         if (!$smtp->to($email)) {
             push @error, "Invalid email address";
         } else {
             $smtp->data();
             $smtp->datasend("To: $email\n");
-            $smtp->datasend("From: noreply+registration\@terra.snellman.net\n");
+            $smtp->datasend("From: noreply+registration\@terra.denvertech.org\n");
             $smtp->datasend("Subject: Account activation for Terra Mystica\n");
             $smtp->datasend("\n");
             $smtp->datasend("To activate your account, use the following link:\n");
