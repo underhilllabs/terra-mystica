@@ -1,8 +1,3 @@
-#+TITLE: README
-#+AUTHOR: Juho Snellman
-#+EMAIL: jsnell@iki.fi
-#+STYLE: <link rel="stylesheet" type="text/css" href="stc/org.css" />
-
 A play-by-email / play-by-web moderator for the boardgame Terra Mystica.
 
 - Full rules enforcement, automatic email notifications, command language + simple UI
@@ -10,15 +5,16 @@ A play-by-email / play-by-web moderator for the boardgame Terra Mystica.
 - Uses PostgreSQL as the backing storage
 
 
-* Deployment Instructions
+# Deployment Instructions
 
 ```bash
 mkdir www
 perl deploy.pl www
 ```
 
-* Perl CPAN modules to install
+# Perl CPAN modules to install
 
+```
 cpanm Bytes::Random::Secure CGI::PSGI Clone Crypt::Blowfish Crypt::CBC Crypt::Eksblowfish::Bcrypt Data::Password::Common DBD::Pg DBI Digest::SHA1 Exporter::Easy File::Slurp indirect JSON Math::Random::MT Method::Signatures::Simple Moose Readonly Statistics::Descriptive Task::Plack Term::ReadLine Text::Diff Text::Template
-
+```
 
