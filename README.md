@@ -7,10 +7,20 @@ A play-by-email / play-by-web moderator for the boardgame Terra Mystica.
 
 # Deployment Instructions
 
+## make logs directories
+
 ```bash
-mkdir www
-perl deploy.pl www
+mkdir logs
+mkdir www-devel
+mkdir www-devel/logs
+mkdir www-devel/data/log
 ```
+
+```bash
+mkdir www-devel
+perl deploy.pl www-devel
+```
+
 
 # Perl CPAN modules to install
 
@@ -18,3 +28,4 @@ perl deploy.pl www
 cpanm Bytes::Random::Secure CGI::PSGI Clone Crypt::Blowfish Crypt::CBC Crypt::Eksblowfish::Bcrypt Data::Password::Common DBD::Pg DBI Digest::SHA1 Exporter::Easy File::Slurp indirect JSON Math::Random::MT Method::Signatures::Simple Moose Readonly Statistics::Descriptive Task::Plack Term::ReadLine Text::Diff Text::Template
 ```
 
+More deployment instructions: https://github.com/jsnell/terra-mystica/wiki/Local-environment-setup
